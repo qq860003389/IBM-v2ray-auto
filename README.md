@@ -37,14 +37,16 @@ wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/goui
 cf反代域名加速
 ~~~
 addEventListener(
-  "fetch",event => {
-     let url=new URL(event.request.url);
-     url.hostname="待加速的地址";
-     let request=new Request(url,event.request);
-     event. respondWith(
-       fetch(request)
-     )
-  })
+	"fetch",event => {
+		let url=new URL(event.request.url);
+		url.hostname="域名";
+		let request=new Request(url,event.request);
+		event. respondWith(
+			fetch(request)
+		)
+	}
+)
+
 ~~~
 
 参考项目：
